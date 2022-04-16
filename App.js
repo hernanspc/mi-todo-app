@@ -8,6 +8,8 @@ import Onboarding from "./screens/Onboarding";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import React from "react";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const Stack = createNativeStackNavigator();
 
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
     width: 42,
     height: 42,
     borderRadius: 21,
-    backgroundColor: "#000",
+    backgroundColor: "#5bc500",
     position: "absolute",
     bottom: 50,
     right: 15,

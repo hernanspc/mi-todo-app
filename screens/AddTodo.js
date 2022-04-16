@@ -77,20 +77,23 @@ export default function AddTodo() {
       }}
     >
       <View style={styles.container}>
-        <Text style={styles.title}>Add a Task</Text>
+        <Text style={styles.title}>Añadir una Tarea</Text>
         <View style={styles.inputContainer}>
-          <Text style={styles.inputTitle}>Name</Text>
+          <Text style={styles.inputTitle}>Nombre</Text>
           <TextInput
             style={styles.textInput}
-            placeholder="Tareas"
+            placeholder="Tarea"
             placeholderTextColor="#00000030"
+            theme={{
+              colors: { primary: "#5bc500", underlineColor: "transparent" },
+            }}
             onChangeText={(text) => {
               setName(text);
             }}
           />
         </View>
         <View style={styles.inputContainer}>
-          <Text style={styles.inputTitle}>Hour</Text>
+          <Text style={styles.inputTitle}>Hora</Text>
           <DateTimePicker
             value={date}
             mode={"time"}
@@ -106,7 +109,7 @@ export default function AddTodo() {
           ]}
         >
           <View>
-            <Text style={styles.inputTitle}>Today</Text>
+            <Text style={styles.inputTitle}>Hoy dia</Text>
             <Text
               style={{
                 color: "#00000040",
@@ -115,7 +118,7 @@ export default function AddTodo() {
                 paddingBottom: 10,
               }}
             >
-              If you disable today, the task will be considered as tomorrow
+              Si deshabilita hoy, la tarea se considerará como mañana
             </Text>
           </View>
           <Switch
@@ -132,9 +135,10 @@ export default function AddTodo() {
           ]}
         >
           <View>
-            <Text style={styles.inputTitle}>Alert</Text>
+            <Text style={styles.inputTitle}>Alerta</Text>
             <Text style={{ color: "#00000040", fontSize: 12, maxWidth: "85%" }}>
-              You will receive an alert at the time you set for this reminder
+              Recibirás una alerta a la hora que establezcas para este
+              recordatorio
             </Text>
           </View>
           <Switch
@@ -146,7 +150,7 @@ export default function AddTodo() {
         </View>
 
         <TouchableOpacity onPress={addTodo} style={styles.button}>
-          <Text style={{ color: "white" }}>Done</Text>
+          <Text style={{ color: "white" }}>Hecho</Text>
         </TouchableOpacity>
       </View>
     </TouchableWithoutFeedback>
@@ -174,6 +178,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "600",
     lineHeight: 24,
+    paddingRight: 10,
   },
   inputContainer: {
     justifyContent: "space-between",
@@ -185,7 +190,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#000000",
+    backgroundColor: "#5bc500",
     height: 46,
     borderRadius: 11,
   },
